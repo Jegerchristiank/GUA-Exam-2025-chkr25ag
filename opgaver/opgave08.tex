@@ -1,25 +1,27 @@
-\section*{Opgave 08}
-\addcontentsline{toc}{section}{Opgave 08}
+\section*{Assignment 08}
+\addcontentsline{toc}{section}{Assignment 08}
 
-Jeg prøver her at samle de vigtigste ting, vi faktisk kan måle på, så platformen ikke bare føles god i maven, men også leverer på tallene. Og ja, jeg holder det lidt nede på jorden, så vi kan bruge det i hverdagen.
+Here I collect the metrics that actually matter so the platform does not just feel good in our gut but also performs on paper. The expanded English version keeps the tone grounded so we can use it day to day rather than as an academic artefact.
 
-\subsection*{KPI'er der giver mening}
+\subsection*{KPIs that make sense}
 \begin{itemize}
-    \item \textbf{Matching rate}: Hvor mange foreslåede matches bliver faktisk accepteret? Hvis den ligger lavt, er vores anbefalinger ved siden af, og så er det oplagt at tweake algoritmen eller onboarding-spørgsmålene.
-    \item \textbf{Repeat usage rate}: Hvor mange brugere vender tilbage inden for 30 dage? Det fortæller mig, om vi skaber vaner eller bare har et engangsprodukt. Falder den, må vi kigge på retention-features, notifikationer eller måske community-events.
-    \item \textbf{Net Promoter Score (NPS)}: Den er lidt fluffy, men stadig nice, fordi den peger på, om folk gider anbefale os til vennerne. Et drop i NPS er tit første tegn på, at noget opleves uretfærdigt eller buggy.
-    \item \textbf{Time-to-first-value}: Hvor hurtigt når en ny bruger frem til deres første værdifulde interaktion (fx første match eller første booking)? Hvis det trækker ud, skal vi smide friktion over bord i onboarding-flowet.
-    \item \textbf{Revenue per active match}: Vi skal jo også tjene penge. Den her KPI binder forretningsmodellen til brugeradfærden og viser, om vores monetisering faktisk skalerer med engagementet.
+    \item \textbf{Matching rate}: What share of suggested matches get accepted? If it drops, our recommendations are off and we need to tweak the algorithm or onboarding questions. With more space I can note that we slice this by cohort to see whether marketing campaigns or new verticals drag the average down.
+    \item \textbf{Repeat usage rate}: How many users return within 30 days? That shows whether we create habits or just deliver a one-off thrill. A dip triggers a look at retention features, notifications, or community events.
+    \item \textbf{Net Promoter Score (NPS)}: Fluffy but still useful because it reveals whether people would recommend us to friends. A decline is often the first sign that something feels unfair or buggy, so we pair it with qualitative interviews.
+    \item \textbf{Time-to-first-value}: How fast does a new user reach their first meaningful interaction (first match or booking)? If it drags, we strip friction from the onboarding flow or add guided missions.
+    \item \textbf{Revenue per active match}: We must pay the bills. This KPI ties the business model to behaviour and shows whether monetisation scales with engagement. We also watch variance so we can spot if a few power users prop up the number.
+    \item \textbf{Equity of participation}: Since we doubled the length, I add one more metric: the share of projects coming from resource-light partners. It keeps us honest about the inclusion goals discussed in Assignment~07.
 \end{itemize}
 
-\subsection*{Datainfrastruktur og feedback-loop}
-Jeg ser for mig en ret simpel, men solid stack: Events og brugerdata lander i et cloud data warehouse (BigQuery eller Snowflake), fordi det er billigt nok og let at koble op på dashboards. Vi pumper rå events ind via noget ala Segment eller RudderStack, så appen ikke skal snakke direkte med alt muligt. Ovenpå smider vi et transformationslag i dbt, så vi kan lave rene tabeller til analytics, cohort-analyser og eksperimenter. Visualisering kører i et fælles Looker Studio- eller Metabase-dashboard, fordi alle kan klikke rundt uden at skulle kunne SQL.
+\subsection*{Data infrastructure and feedback loop}
+I imagine a simple yet sturdy stack. Events and user data land in a cloud warehouse (BigQuery or Snowflake) because it is cost-effective and easy to connect to dashboards. We stream raw events via Segment or RudderStack so the app does not talk to every analytics tool directly. On top sits a dbt transformation layer to craft clean tables for analytics, cohort analysis, and experiments. Visualisations live in a shared Looker Studio or Metabase workspace so anyone can click around without writing SQL.
 
-Feedback-loopen bygger på to rytmer:
+The feedback loop runs on two rhythms:
 \begin{itemize}
-    \item \textbf{Ugentlige reviews}: Produkt, data og kundeservice mødes hver tirsdag, løber KPI-dashboardet igennem og dykker ned i anomalies. Vi checker især kohorter af nye brugere fra de seneste to uger, så vi får hurtigt øje på onboarding-problemer.
-    \item \textbf{Månedlige cohort-analyser}: Her segmenterer vi på acquisition-kilde og første match-tidspunkt for at se, hvilke cohorter der faktisk bliver hængende og betaler. De rapporter går direkte ind i prioriteringen af marketing- og produkt-roadmaps.
+    \item \textbf{Weekly reviews}: Product, data, and customer support meet every Tuesday, walk the KPI dashboard, and dive into anomalies. We inspect cohorts of new users from the past two weeks so onboarding issues surface quickly.
+    \item \textbf{Monthly cohort analyses}: We segment by acquisition channel and first-match timestamp to see which cohorts stick and pay. These reports feed directly into marketing spend decisions and the product roadmap.
+    \item \textbf{Quarterly learning readouts}: With the longer write-up I add a third ritual where we summarise experiments, share surprises, and reset hypotheses. It keeps the informal student vibe alive while structuring knowledge.
 \end{itemize}
 
-\subsection*{Sådan guider metrics ændringer}
-Forestil dig, at matching rate dykker fra 62\% til 48\% på tre uger. I ugereviewet ser vi, at det primært er nye brugere fra en partnerkampagne. Cohort-analysen viser også, at samme gruppe har en time-to-first-value på over 48 timer. Vi laver derfor en hurtig A/B-test på onboarding-spørgsmålene, hvor vi tilføjer et ekstra step med præferencer og strammer algoritmens vægte. Efter to sprint ruller vi den bedste version ud. I næste månedlige check hopper matching rate tilbage over 60\%, og repeat usage for kampagnecohorten lander 8 procentpoint højere. Det giver også et lille løft i revenue per active match, så vi får bekræftet, at produktændringen betaler sig både for brugere og forretning. På den måde bliver KPI'erne ikke bare rapporter, men et kompas for næste eksperiment.
+\subsection*{How metrics guide change}
+Imagine the matching rate dips from 62\% to 48\% over three weeks. The weekly review reveals it is mainly new users from a partner campaign. The cohort analysis also shows the same group has time-to-first-value above 48 hours. We spin up an A/B test on onboarding questions, adding a preference step and tightening algorithm weights. After two sprints we ship the winning version. By the next monthly check the matching rate climbs back above 60\%, repeat usage for the campaign cohort jumps eight points, and revenue per active match nudges upward. Because we now track equity of participation, we also confirm that NGO projects are still represented, so the fix benefits everyone. In this way KPIs stop being decorative charts and become a compass for the next experiment.
