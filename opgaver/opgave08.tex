@@ -1,4 +1,25 @@
 \section*{Opgave 08}
 \addcontentsline{toc}{section}{Opgave 08}
 
-% TODO: Indsæt beskrivelse og indhold for opgave 08.
+Jeg prøver her at samle de vigtigste ting, vi faktisk kan måle på, så platformen ikke bare føles god i maven, men også leverer på tallene. Og ja, jeg holder det lidt nede på jorden, så vi kan bruge det i hverdagen.
+
+\subsection*{KPI'er der giver mening}
+\begin{itemize}
+    \item \textbf{Matching rate}: Hvor mange foreslåede matches bliver faktisk accepteret? Hvis den ligger lavt, er vores anbefalinger ved siden af, og så er det oplagt at tweake algoritmen eller onboarding-spørgsmålene.
+    \item \textbf{Repeat usage rate}: Hvor mange brugere vender tilbage inden for 30 dage? Det fortæller mig, om vi skaber vaner eller bare har et engangsprodukt. Falder den, må vi kigge på retention-features, notifikationer eller måske community-events.
+    \item \textbf{Net Promoter Score (NPS)}: Den er lidt fluffy, men stadig nice, fordi den peger på, om folk gider anbefale os til vennerne. Et drop i NPS er tit første tegn på, at noget opleves uretfærdigt eller buggy.
+    \item \textbf{Time-to-first-value}: Hvor hurtigt når en ny bruger frem til deres første værdifulde interaktion (fx første match eller første booking)? Hvis det trækker ud, skal vi smide friktion over bord i onboarding-flowet.
+    \item \textbf{Revenue per active match}: Vi skal jo også tjene penge. Den her KPI binder forretningsmodellen til brugeradfærden og viser, om vores monetisering faktisk skalerer med engagementet.
+\end{itemize}
+
+\subsection*{Datainfrastruktur og feedback-loop}
+Jeg ser for mig en ret simpel, men solid stack: Events og brugerdata lander i et cloud data warehouse (BigQuery eller Snowflake), fordi det er billigt nok og let at koble op på dashboards. Vi pumper rå events ind via noget ala Segment eller RudderStack, så appen ikke skal snakke direkte med alt muligt. Ovenpå smider vi et transformationslag i dbt, så vi kan lave rene tabeller til analytics, cohort-analyser og eksperimenter. Visualisering kører i et fælles Looker Studio- eller Metabase-dashboard, fordi alle kan klikke rundt uden at skulle kunne SQL.
+
+Feedback-loopen bygger på to rytmer:
+\begin{itemize}
+    \item \textbf{Ugentlige reviews}: Produkt, data og kundeservice mødes hver tirsdag, løber KPI-dashboardet igennem og dykker ned i anomalies. Vi checker især kohorter af nye brugere fra de seneste to uger, så vi får hurtigt øje på onboarding-problemer.
+    \item \textbf{Månedlige cohort-analyser}: Her segmenterer vi på acquisition-kilde og første match-tidspunkt for at se, hvilke cohorter der faktisk bliver hængende og betaler. De rapporter går direkte ind i prioriteringen af marketing- og produkt-roadmaps.
+\end{itemize}
+
+\subsection*{Sådan guider metrics ændringer}
+Forestil dig, at matching rate dykker fra 62\% til 48\% på tre uger. I ugereviewet ser vi, at det primært er nye brugere fra en partnerkampagne. Cohort-analysen viser også, at samme gruppe har en time-to-first-value på over 48 timer. Vi laver derfor en hurtig A/B-test på onboarding-spørgsmålene, hvor vi tilføjer et ekstra step med præferencer og strammer algoritmens vægte. Efter to sprint ruller vi den bedste version ud. I næste månedlige check hopper matching rate tilbage over 60\%, og repeat usage for kampagnecohorten lander 8 procentpoint højere. Det giver også et lille løft i revenue per active match, så vi får bekræftet, at produktændringen betaler sig både for brugere og forretning. På den måde bliver KPI'erne ikke bare rapporter, men et kompas for næste eksperiment.
