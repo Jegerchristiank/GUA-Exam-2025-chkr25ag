@@ -1,4 +1,48 @@
 \section*{Opgave 10}
 \addcontentsline{toc}{section}{Opgave 10}
 
-% TODO: Indsæt beskrivelse og indhold for opgave 10.
+Det sidste jeg mangler er at folde blikket ud mod de næste fem år og være ærlig om både drømme og faldgruber. Så her kommer mi
+n fremskrivning, et reality-check på trusler og nogle afsluttende refleksioner over hele platformrejsen.
+
+\subsection*{Fremskrivninger}
+Jeg har sat et konservativt basisscenarie op med tre nøgletal, hvor vi bygger oven på alt det groundwork fra de tidligere opga
+ver:\newline
+\begin{table}[h]
+  \centering
+  \begin{tabular}{p{3cm}p{3.5cm}p{6cm}}
+    \toprule
+    \textbf{År 5-mål} & \textbf{Tal} & \textbf{Antagelser} \\
+    \midrule
+    Aktive brugere & 75.000 & Årlig vækst på 55\% drevet af lokale cluster-launches og netværkseffekter, fastholdelse på 68\% \citep{Choudary2016,Srnicek2017}. \\
+    Omsætning & 42 mio. DKK & Hybridmodel: 60\% transaktionsgebyr (4\%), 25\% datadrevne abonnementer, 15\% co-branded partnerskaber \citep{ShapiroVarian1999}. \\
+    Strategiske partnerskaber & 18 & Tre nationale ankerorganisationer, fem branchedata-hubs, ti kommunale eller regionale innovationsenheder \citep{Reillier2017}. \\
+    \bottomrule
+  \end{tabular}
+  \caption{Basisscenarie for platformens udvikling over fem år.}
+\end{table}
+
+Tallene bygger på de pilotdata vi allerede har (konvertering ca. 12\%) og at vi i år 2-3 får automatiseret onboarding, så partn
+erer kan integrere sig uden specialudvikling. Skulle vi se stærkere virale loops, har jeg et upside-scenarie i baghånden, hvor
+ både brugere og omsætning ligger 30\% højere, men det kræver, at community-featuresne faktisk rammer plet.
+
+\subsection*{Trusler og exit-scenarier}
+De største trusler er stadig klassikerne fra platformlitteraturen: Substitution, multi-homing og regulering. Hvis en global ak
+tør køber sig ind i segmentet og dumper priserne, kan vores transaktionsgebyrer pludselig se dyre ud \citep{Porter2008}. Og hvi
+s vi ikke bliver ved med at gøre datahåndteringen gennemsigtig, kan både partnere og myndigheder lukke ned for datastrømmene, h
+vilket effektivt kvæler netværkseffekterne \citep{Srnicek2017}. For at modvirke multi-homing skal vi blive ved med at gøre smar
+te integrationsfeatures eksklusive og dyrke switching costs gennem historiske insights, som konkurrenter ikke kan kopiere uden
+ videre \citep{FarrellSaloner1986}.
+
+Jeg har skitseret to realistiske exit-scenarier, hvis alt går galt: (1) et kontrolleret acqui-hire, hvor en større nordisk bran
+cheplatform køber team og IP, mens vi lukker selve markedspladsen ned under ordnede forhold; (2) en pivot til ren datainfrastru
+ktur, hvor vi afvikler matchmakingen men viderefører API-laget som SaaS mod en mindre kundegruppe. Begge scenarier kræver, at v
+i holder koden modulær og kontrakterne rene, så værdierne kan løsrives uden kaos \citep{Reillier2017}.
+
+\subsection*{Afsluttende refleksion}
+Det her forløb har været en reminder om, hvor krævende det er at balancere vækstambitioner med governance. Hver eneste designbe
+slutning har ramt begge sider af markedspladsen på én gang, og det har tvunget mig til at tænke i loops frem for lineære funnels
+ \citep{Choudary2016}. Samtidig har Porters konkurrencestrategi stadig været en god virkelighedscheck på, om vi faktisk er diff
+erentierede eller bare endnu en generisk SaaS \citep{Porter2008}. Den store læring er, at netværkseffekter ikke er en gratis sn
+arvej: de opstår kun, hvis vi hele tiden investerer i legitimitet, datakvalitet og partnerskaber, der giver mening for begge sid
+er. Det er præcis derfor, jeg afslutter med et fokus på partnerskabsprogrammet og en exit-plan---for når governance er på plads
+, kan vi både vokse og trække stikket på en ordentlig måde \citep{Srnicek2017}.
