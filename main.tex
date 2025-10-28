@@ -1,35 +1,8 @@
 \documentclass[12pt,a4paper]{article}
 
-% Encoding, language, fonts
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
-\usepackage{newtxtext,newtxmath}
-\usepackage[protrusion=true,expansion=true]{microtype}
-
-% Layout and floats
-\usepackage[a4paper,margin=2.5cm]{geometry}
-\usepackage{setspace}
-\setstretch{1.5}
-\usepackage{graphicx}
-
-% Tables and math
-\usepackage{booktabs}
-\usepackage{array}
-\usepackage{amsmath}
-
-% Citations (natbib-compatible)
-\usepackage[natbibapa]{apacite}
+\input{preamble}
 
 \begin{document}
-
-% ================= Global metadata =================
-\title{\textit{[Insert document title here]}}
-\author{\textit{[Insert author name(s) here]}}
-\date{\textit{[Insert submission date here]}}
-
-\maketitle
-
 % Remove numbering in headings and thus in-text
 \setcounter{secnumdepth}{-1}
 % Remove numbers in TOC entries
@@ -40,31 +13,23 @@
 \tableofcontents
 \newpage
 
-% ================= Inputs for each assignment =================
-\section*{Assignment Inputs}
-% Outline the required inputs, datasets, or briefs for each assignment here.
+\section*{Introduction}
+\addcontentsline{toc}{section}{Introduction}
+This document collects the course assignments in a single, structured format. Each section is provided in its own file to keep the project organised and maintainable.
+
+\input{opgaver/opgave01}
+\input{opgaver/opgave02}
+\input{opgaver/opgave03}
+\input{opgaver/opgave04}
+\input{opgaver/opgave05}
+\input{opgaver/opgave06}
+\input{opgaver/opgave07}
+\input{opgaver/opgave08}
+\input{opgaver/opgave09}
+\input{opgaver/opgave10}
 
 \newpage
-
-% ================= Analysis and development notes =================
-\section*{Working Notes}
-% Capture design decisions, analytical steps, or intermediate findings for each assignment.
-
-\newpage
-
-% ================= Deliverables per assignment =================
-\section*{Deliverables}
-% Summarize the key outputs (reports, prototypes, presentations) produced for every assignment.
-
-\newpage
-
-% ================= Overall reflections and conclusions =================
-\section*{Overall Reflections and Conclusions}
-% Reserve this space for cross-assignment reflections, lessons learned, and concluding remarks.
-
-\newpage
-
-% Auto bibliography from your References.bib (case matters)
+% Auto bibliography from your references.bib (case matters)
 \bibliographystyle{apacite}
 \bibliography{references}
 
