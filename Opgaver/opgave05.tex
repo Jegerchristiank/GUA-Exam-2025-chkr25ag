@@ -13,23 +13,26 @@ Transparency matters, so we ship a ``data mirror'' where students and organisati
 
 Figure~\ref{fig:onboarding-flow} visualises the ``guided tour'' we give new users. The refreshed four-step carousel (`Onboarding-1.png`--`Onboarding-4.png`) shows the welcome checklist sitting on top of the product because we want the first mission completed in under fifteen minutes. Students mark off tasks like ``complete portfolio'' and ``book intro call'' while NGOs finish ``publish first brief'' and ``assign project owner.'' Each task unlocks contextual tips and short loom videos. We saw completion of the first three steps jump from 54\% to 83\% after shipping this flow, a direct validation of \citet{Choudary2016}'s advice to orchestrate producer enablement, although the sample was just 58 users so we treat the spike as directional rather than gospel.
 
-\begin{figure}[h]
+\begin{figure}[H]
   \centering
-  \begin{minipage}[b]{0.3\linewidth}
-    \includegraphics[width=\linewidth]{Onboarding-1.png}\\[0.3em]
-    \includegraphics[width=\linewidth]{Onboarding-2.png}
-  \end{minipage}\hfill
-  \begin{minipage}[b]{0.3\linewidth}
-    \includegraphics[width=\linewidth]{Onboarding-3.png}\\[0.3em]
-    \includegraphics[width=\linewidth]{Onboarding-4.png}
-  \end{minipage}
+  \makebox[\textwidth][c]{%
+    \begin{minipage}[b]{0.42\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{Onboarding-1.png}\\[0.3em]
+      \includegraphics[width=\linewidth]{Onboarding-2.png}
+    \end{minipage}\hspace{1.5em}%
+    \begin{minipage}[b]{0.42\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{Onboarding-3.png}\\[0.3em]
+      \includegraphics[width=\linewidth]{Onboarding-4.png}
+    \end{minipage}}
   \caption{Guided onboarding (`Onboarding-1.png`--`Onboarding-4.png`).}
   \label{fig:onboarding-flow}
 \end{figure}
 
 Governance comes alive in Figure~\ref{fig:admin-panel}. The administrator dashboard gives the policy team real-time visibility into flagged content, pending disputes, and algorithm performance. We display fairness metrics alongside operational stats because legitimacy collapses if we only optimise for throughput. Moderators can drill into case details, trigger templated responses, or escalate to legal counsel when required, though we still budget time for manual follow-up when automated filters misclassify sarcasm as abuse. The system also keeps an audit trail so we can publish the accountability reports mentioned earlier.
 
-\begin{figure}[h]
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.85\linewidth]{Organisation-Administratorpanel.png}
   \caption{Governance control room (`Organisation-Administratorpanel.png`).}
