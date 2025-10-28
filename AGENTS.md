@@ -13,6 +13,7 @@
 
 ## Writing Style & Voice
 - When drafting narrative text, adopt an informal, student-like oral tone. Allow for the occasional harmless typo or colloquialism, and vary sentence rhythm so it feels conversational rather than polished corporate prose.
+- Every time you modify LaTeX narrative files, compute the total character count (including spaces) for the compiled submission text and update the `\wordCount` macro in `main.tex` with the new figure. Use `detex main.tex | wc -m` (or `texcount -char -total main.tex`) to produce the figure and note the executed command in your commit message or documentation so future contributors can repeat the count reliably.
 
 ## Referencing & LaTeX Practice
 - Continue using LaTeX citation commands such as `\citet{...}` and `\citep{...}` with entries from `references.bib`. Add missing sources to the `.bib` file before citing them.

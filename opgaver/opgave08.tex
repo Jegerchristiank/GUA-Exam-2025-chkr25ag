@@ -25,3 +25,14 @@ The feedback loop runs on two rhythms:
 
 \subsection*{How metrics guide change}
 Imagine the matching rate dips from 62\% to 48\% over three weeks. The weekly review reveals it is mainly new users from a partner campaign. The cohort analysis also shows the same group has time-to-first-value above 48 hours. We spin up an A/B test on onboarding questions, adding a preference step and tightening algorithm weights. After two sprints we ship the winning version. By the next monthly check the matching rate climbs back above 60\%, repeat usage for the campaign cohort jumps eight points, and revenue per active match nudges upward. Because we now track equity of participation, we also confirm that NGO projects are still represented, so the fix benefits everyone. In this way KPIs stop being decorative charts and become a compass for the next experiment.
+
+Figure~\ref{fig:feedback-screen} shows the feedback interface that feeds those metrics. After each project both sides rate collaboration quality, delivery against scope, and communication cadence. The qualitative notes surface in the moderation queue if either side flags an issue, while the quantitative scores roll into our matching algorithm. We also display ``impact badges'' earned during the project to reinforce positive behaviour. The design keeps friction low (three taps and a short note) yet yields rich data, proving that good measurement is a UX problem as much as a data engineering task.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\linewidth]{figures/feedback-vurderingsskaerm.png}
+  \caption{Feedback and evaluation screen (`feedback-vurderingsskaerm.png`) that powers the KPI loop.}
+  \label{fig:feedback-screen}
+\end{figure}
+
+We built the analytics stack with reproducibility in mind. All dashboards include a ``definition'' tooltip that links to the dbt model and logic behind each metric. We version-control SQL queries, store key dashboards as code, and maintain a metrics catalogue so newcomers learn the context fast. Every quarter we archive snapshots of the KPI board so longitudinal analysis stays accurate even as definitions evolve. Those mundane habits are what turn metrics into institutional memory, aligning with \citet{Choudary2016}'s insistence that platforms must institutionalise learning, not just collect data.

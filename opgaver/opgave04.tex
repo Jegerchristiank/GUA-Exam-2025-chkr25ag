@@ -21,3 +21,16 @@ I anchor the roadmap in the classic seed $\rightarrow$ grow $\rightarrow$ harves
 
 \subsection*{Experiments and guardrails}
 To keep ourselves honest we line up three experiments. First, an A/B test on when organisations see the completion fee: at project submission or only after matching. We monitor match acceptance and dropout rates. Second, pricing interviews using the Van Westendorp method to validate the Partner tier before we hard-code the 499 DKK price point; this leans on \citet{Reillier2017}'s advice to co-design producer tools. Third, a diary study with 15 students to learn whether insights reporting feels empowering or creepy, so we can adjust the consent flows. Each experiment has a rollback plan documented in Notion. Writing it out in English keeps the tone scrappy and reflective while answering the exam's monetisation brief directly.
+
+We also mapped the cost side to avoid mistaking top-line revenue for sustainability. Fixed costs in the first year sit around 620,000 DKK (two full-time builders plus design and hosting), while variable costs scale with completed projects (payment processing at 1.4\%, mentor stipends, and customer support hours). Under conservative assumptions we reach operating break-even at roughly 1,050 completed projects per year, a number we can triangulate with the activation roadmap in Assignment~09. The exercise mirrors \citet{ShapiroVarian1999}'s warning that pricing only works if you know your cost curves.
+
+Figure~\ref{fig:student-profile} gives the monetisation story a face. It is the upgraded student profile view that appears when a partner organisation unlocks the enablement subscription. The badges, skill heatmaps, and endorsement timeline are the ``producer tools'' NGOs pay for because they compress due diligence into a glance. Students see immediate value too: the ``next skill to showcase'' recommendation is powered by our data network effect, nudging them towards opportunities that increase platform stickiness. Embedding the screenshot in the paper demonstrates that our monetisation thesis is rooted in actual feature bundles, not abstract spreadsheets.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\linewidth]{figures/min-profil-student.png}
+  \caption{Enhanced student profile (`min-profil-student.png`) illustrating the Partner enablement features NGOs pay for.}
+  \label{fig:student-profile}
+\end{figure}
+
+Finally, we pressure-tested ethical boundaries. The talent insights add-on only ships once we have at least five organisations in a sector and 500 completed projects to avoid deanonymisation. Consent flows include explicit ``why we collect this'' copy and easy opt-outs. We also keep grants separate from transaction fees in the ledger so subsidies never distort price signals. Writing these guardrails down honours the spirit of \citet{Zuboff2019} and \citet{Srnicek2017}, who remind platform builders that monetisation can quickly slide into exploitation if data governance lags the business model.
