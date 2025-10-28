@@ -2,7 +2,39 @@
 
 \input{preamble}
 
+% Cover page metadata
+\newcommand{\university}{Copenhagen Business School}
+\newcommand{\faculty}{Department of Digitalisation}
+\newcommand{\examTitle}{Google, Uber, Amazon: Management of Platform Business}
+\newcommand{\examCode}{BHAAV6034U.LECTURE\_E25}
+\newcommand{\examType}{Take-home Exam Submission}
+\newcommand{\studentName}{[Student Name]}
+\newcommand{\studentId}{[Student Number]}
+\newcommand{\submissionDate}{31 October 2025}
+\newcommand{\wordCount}{[Character count to be inserted]}
+
 \begin{document}
+\begin{titlepage}
+  \thispagestyle{empty}
+  \centering
+  {\Large \textbf{\university}}\\[0.5cm]
+  {\large \faculty}\\[1.5cm]
+  {\LARGE \textbf{\examTitle}}\\[0.5cm]
+  {\large \examCode\\\examType}\\[1.5cm]
+  \begin{tabular}{rl}
+    \textbf{Student name:} & \studentName \\
+    \textbf{Student number:} & \studentId \\
+    \textbf{Submission date:} & \submissionDate \\
+    \textbf{Character count (incl. spaces):} & \wordCount \\
+  \end{tabular}\\[1.5cm]
+  \vfill
+  {\large Course responsible: Associate Professor Carina Antonia Hallin}\\[0.3cm]
+  {\large Academic term: Autumn 2025}\\[0.3cm]
+  {\large Exam window: 17 October 2025 -- 31 October 2025}\\[1.5cm]
+  \rule{0.8\linewidth}{0.4pt}\\[0.5cm]
+  {\small This cover sheet confirms that the assignment is submitted individually and complies with CBS formal requirements.}
+\end{titlepage}
+
 % Remove numbering in headings and thus in-text
 \setcounter{secnumdepth}{-1}
 % Remove numbers in TOC entries
@@ -17,7 +49,7 @@
 \addcontentsline{toc}{section}{Introduction}
 This document collects the course assignments in a single, structured format. Each section is provided in its own file to keep the project organised and maintainable, and I have translated every answer into English so the narrative flows consistently across chapters.
 
-Beyond a simple compilation, the write-up doubles the depth of the original reflections. Each task now contains richer context about the design journey, explicit links back to theory, and concrete examples of how the platform experiments would play out in practice. Throughout the expanded sections I reference attached figures when relevant---for instance, Figure~\ref{fig:participation-curve} visualises the adoption curve that underpins our governance plan---so readers can move fluidly between narrative, evidence, and citations.
+Beyond a simple compilation, the write-up doubles the depth of the original reflections. Each task now contains richer context about the design journey, explicit links back to theory, and concrete examples of how the platform experiments would play out in practice. Throughout the expanded sections I reference attached figures when relevant---for instance, Figure~\ref{fig:scaling-dashboard} visualises the adoption curve that underpins our governance plan---so readers can move fluidly between narrative, evidence, and citations.
 
 \input{opgaver/opgave01}
 \input{opgaver/opgave02}
