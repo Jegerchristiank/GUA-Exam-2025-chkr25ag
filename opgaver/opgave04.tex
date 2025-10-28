@@ -1,4 +1,29 @@
 \section*{Opgave 04}
 \addcontentsline{toc}{section}{Opgave 04}
 
-% TODO: Indsæt beskrivelse og indhold for opgave 04.
+Jeg prøver her at samle de mest realistiske måder, vi kan tjene penge på platformen, uden at dræbe den skrøbelige netværkseffekt vi stadig er i gang med at sparke i gang.\footnote{Kort recap: platformen matcher lokale madværter med nysgerrige gæster.} Logikken følger de klassiske platformstanker om at give mindst én side en gratis tur i starten for at sikre adoption.\citep{Choudary2016}
+
+\subsection*{Mulige revenue streams}
+\begin{itemize}
+  \item \textbf{Transaktionsgebyr på hvert match.} Vi tager f.eks. 8\% af betalingen, men kun når både vært og gæst er tilfredse. Det er super skalerbart og ligger fint i forlængelse af den værdiskabelse vi allerede faciliterer.\citep{HagiuWright2013} Ulempen er, at det kan føles som en straf for vores tidlige power users, så vi risikerer at de hopper over på alternative, uformelle kanaler, hvis vi sætter gebyret for hurtigt eller for højt.\citep{Reillier2017}
+  \item \textbf{Freemium medlemskab for værter.} Basis er gratis, men vi sælger et Pro-abonnement med hurtigere udbetaling, bedre synlighed og automatiske indkøbslister. Fordelen er forudsigelig MRR og mulighed for at støtte et cohort af professionelle værter, som i forvejen ønsker bedre værktøjer.\citep{Choudary2016} Bagsiden: abonnement kan virke som pay-to-win og skabe skævheder mellem hobby- og pro-værter, hvilket kan skade community-følelsen.
+  \item \textbf{Annoncer eller data insights til lokale fødevarebrands.} Srnicek kalder det den klassiske dataficering: vi bruger adfærdsdata til at sælge målrettede kampagner.\citep{Srnicek2017} Det kan blive en stor indtægtskilde på sigt, men Zuboff minder os om, at overvågningskapitalisme hurtigt udhuler brugernes tillid.\citep{Zuboff2019} For en intim mad-community virker det lidt off-brand, så risikoen er højere end gevinsten nu.
+\end{itemize}
+
+\subsection*{Valg og timing i livscyklussen}
+Jeg går efter en sekventiel model, hvor vi først sikrer kritisk masse og derefter skruer gradvist op for monetiseringen, så vi følger den klassiske livscyklus med seeding \textrightarrow{} growth \textrightarrow{} harvest.\citep{Choudary2016}
+\begin{enumerate}
+  \item \textbf{Seed-fasen (0--6 måneder efter beta).} Ingen gebyrer, ingen abonnementer. Fokus er på at få 500+ vellykkede middage og samle reviews. Vi tester betalingsflowet i baggrunden med dummy-transaktioner, så vi ved at infrastrukturen virker, men vi tager ingen revenue endnu.
+  \item \textbf{Early growth (måned 7--12).} Vi indfører et blødt transaktionsgebyr på 4\% for nye værter, mens eksisterende værter bevarer nulgebyr i tre måneder. Det gør, at vi kan måle elasticiteten uden at chokere kernesiden. Parallel lancerer vi et frivilligt Pro-abonnement til 149 kr./md med fokus på de værter, der har 2+ events pr. måned.
+  \item \textbf{Mature growth (efter måned 12).} Når retention og NPS holder sig stabilt over 50, skalerer vi gebyret til 8\% for alle og bygger add-ons ind i Pro-planen (f.eks. partneraftaler med lokale detailkæder). På dette tidspunkt fravælger vi annoncer og data-salg, men holder muligheden åben hvis vi rammer 50k månedlige brugere og kan designe privacy-first formater.
+\end{enumerate}
+
+\subsection*{Planlagte eksperimenter}
+For at undgå gætværk lægger jeg tre konkrete eksperimenter i kalenderen:
+\begin{itemize}
+  \item \textbf{A/B-test af gebyrindfasning.} 50\% af nye værter møder 4\% gebyr efter deres tredje event, mens kontrolgruppen først møder det efter femte. Vi måler churn og gennemsnitlig event-frekvens.
+  \item \textbf{Price ladder test for Pro.} Tre pris-point (129, 149, 179 kr.) rulles ud i rotation, mens vi følger upgrade-rate og CLV. Klassisk willingness-to-pay eksperiment som Shapiro og Varian anbefaler for informationsgoods.\citep{ShapiroVarian1999}
+  \item \textbf{Kvalitativ dagbogsstudie om annoncer.} Før vi overvejer brand-samarbejder, rekrutterer vi 15 brugere til en to-ugers dagbog om hvordan sponsoreret indhold påvirker deres oplevelse. Det giver os proof, hvis vi senere vil argumentere imod aggressive data-modeller overfor investorer.
+\end{itemize}
+
+Alt i alt holder vi altså kerneindtægten tæt på den værdi, vi allerede leverer (facilitere matches), og vi udsætter de mere invasive modeller til vi har både volumen og tillidskapital til at gøre det ordentligt.
