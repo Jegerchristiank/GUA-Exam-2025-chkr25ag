@@ -1,7 +1,7 @@
 \section*{Assignment 08: Metrics and Learning}
 \addcontentsline{toc}{section}{Assignment 08: Metrics and Learning}
 
-This section focuses on the metrics that keep SkillSync effective each week rather than on a theoretical appendix.
+This section focuses on the metrics that would keep SkillSync effective each week rather than on a theoretical appendix.
 
 \subsection*{KPIs that make sense}
 \begin{itemize}
@@ -15,9 +15,9 @@ This section focuses on the metrics that keep SkillSync effective each week rath
 \end{itemize}
 
 \subsection*{Data infrastructure and feedback loop}
-I keep the data stack simple. Events land in a cloud warehouse (BigQuery or Snowflake) because both scale affordably and support granular access controls. We stream via Segment or RudderStack so the app stays decoupled, dbt shapes clean tables for analysis, and dashboards live in Looker Studio or Metabase so anyone can explore without SQL while respecting permissions.
+I keep the data stack simple on paper. Events would land in a cloud warehouse (BigQuery or Snowflake) because both scale affordably and support granular access controls. Data would stream via Segment or RudderStack so the app stays decoupled, dbt shapes clean tables for analysis, and dashboards live in Looker Studio or Metabase so anyone can explore without SQL while respecting permissions.
 
-The feedback loop runs on three rhythms, mirroring the instrumentation drills from Lecture~5 on metrics and experimentation \citep{Lecture05}:
+The feedback loop runs on three rhythms in the plan, mirroring the instrumentation drills from Lecture~5 on metrics and experimentation \citep{Lecture05}:
 \begin{itemize}
     \item \textbf{Weekly reviews}: Product, data, and support meet every Tuesday, walk the KPI dashboard, and check fresh cohorts so onboarding issues surface fast.
     \item \textbf{Monthly cohort analyses}: Segment by acquisition channel and first-match timestamp to see which cohorts stick and pay; the report feeds marketing spend and the roadmap.
@@ -25,17 +25,15 @@ The feedback loop runs on three rhythms, mirroring the instrumentation drills fr
 \end{itemize}
 
 \subsection*{How metrics guide change}
-Imagine matching rate drops from 62\% to 48\% over three weeks. Weekly review shows new users from a partner campaign lag and cohort analysis reveals time-to-first-value above 48 hours. We run an onboarding A/B test, add a preference step, tighten algorithm weights, and ship the winner two sprints later. The next monthly check shows matching back above 60\%, repeat usage up eight points, revenue per active match nudging upward, and equity of participation intact, turning KPIs into a compass instead of decoration.
+Imagine matching rate drops from 62\% to 48\% over three weeks. A weekly review would show new users from a partner campaign lagging and cohort analysis would reveal time-to-first-value above 48 hours. I would run an onboarding A/B test, add a preference step, tighten algorithm weights, and ship the winner two sprints later. The next monthly check in this scenario shows matching back above 60\%, repeat usage up eight points, revenue per active match nudging upward, and equity of participation intact, turning KPIs into a compass instead of decoration.
 
 Figure~\ref{fig:feedback-screen} shows the feedback interface powering these metrics: after each project both sides rate collaboration quality, delivery against scope, and communication cadence while qualitative notes surface for moderation and scores feed the matching algorithm. ``Impact badges'' reinforce good behaviour while the layout keeps the UX light.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\linewidth]{Student-Project-Feedback.png}
-  \caption{Feedback screen balancing qualitative notes and structured scores.}
+  \includegraphics[width=0.8\linewidth]{figures/Student-Project-Feedback.png}
+  \caption{Feedback screen mock-up balancing qualitative notes and structured scores.}
   \label{fig:feedback-screen}
 \end{figure}
 
-Figure~\ref{fig:feedback-screen} blends notes and scores to power retention.
-
-We built the analytics stack for reproducibility. Dashboards carry ``definition'' tooltips that link to the dbt logic, SQL lives in version control, and a metrics catalogue keeps newcomers oriented. Quarterly KPI snapshots preserve history even as definitions evolve, turning metrics into institutional memory in the spirit of \citet{Choudary2016}.
+I keep the analytics stack geared toward reproducibility. Dashboards would carry ``definition'' tooltips that link to the dbt logic, SQL lives in version control, and a metrics catalogue keeps newcomers oriented. Quarterly KPI snapshots would preserve history even as definitions evolve, turning metrics into institutional memory in the spirit of \citet{Choudary2016}.
