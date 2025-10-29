@@ -11,12 +11,13 @@
 \newcommand{\studentName}{Christian Kristensen}
 \newcommand{\studentId}{chkr25ag}
 \newcommand{\submissionDate}{31 October 2025}
-\newcommand{\wordCount}{34,225}
+\newcommand{\wordCount}{34,104}
 
 \begin{document}
 \begin{titlepage}
   \thispagestyle{empty}
   \centering
+  {\Large \textcolor{gray!70}{\textbf{CBS}}}\\[1cm]
   {\Large \textbf{\university}}\\[0.5cm]
   {\large \faculty}\\[1.5cm]
   {\LARGE \textbf{\examTitle}}\\[0.5cm]
@@ -42,12 +43,16 @@
 \renewcommand{\numberline}[1]{}
 \makeatother
 
+\section*{Executive Summary}
+\addcontentsline{toc}{section}{Executive Summary}
+This report analyses the design, governance, and growth logic of the SkillSync platform, developed for the CBS course ``Google, Uber, Amazon: Management of Platform Business.'' It applies strategy frameworks from Choudary, Srnicek, Parker, and course lectures to a working prototype that brokers collaborations between students and NGOs. The analysis evaluates network effects, monetisation scenarios, and human-centric governance using evidence from experiments, metrics, and stakeholder interviews. Findings show curated onboarding, data practices, and iterative experimentation produced a validated proof-of-concept stage with operational network loops. The study concludes with a scaling outlook addressing demand-side saturation, regulatory expectations, and societal impact.
+
 \tableofcontents
 \newpage
 
 \section*{Introduction}
 \addcontentsline{toc}{section}{Introduction}
-I spent the two-week take-home exam writing up how our SkillSync platform behaved once we took it beyond the classroom. Each answer blends project evidence with the theory we kept quoting in meetings, so anyone reading along can see the reasoning without needing those late-night Slack threads.
+This take-home exam documents how SkillSync behaved beyond the classroom, blending project evidence with the theory we referenced in meetings so readers can follow the reasoning without Slack transcripts. Character tracking ensured the submission remained within CBS format limits, so the portfolio version still mirrors the original exam constraints.
 
 The ten assignments act like a guided tour. The opening questions cover the value proposition plus the first network and monetisation loops. The middle chapters zoom in on governance, data policy, and inequality. The final trio focus on metrics, scaling bets, and the five-year outlook. Each chapter leans on prototype artefacts such as screens, feedback logs, and experiment notes to keep the argument observable.
 
@@ -59,6 +64,8 @@ To orient the reader, Figure~\ref{fig:intro-showcase} revisits the poster we fie
   \caption{Poster session snapshot highlighting SkillSync's core promise.}
   \label{fig:intro-showcase}
 \end{figure}
+
+Figure~\ref{fig:intro-showcase} positions SkillSync as a governance-grounded student--NGO marketplace.
 
 \input{Opgaver/opgave01}
 \input{Opgaver/opgave02}

@@ -1,7 +1,7 @@
 \section*{Assignment 08: Metrics and Learning}
 \addcontentsline{toc}{section}{Assignment 08: Metrics and Learning}
 
-Here I focus on the metrics that matter for SkillSync so the platform feels good in practice and performs on paper. The aim is a practical analytics playbook we can run every week, not a theoretical appendix.
+This section focuses on the metrics that keep SkillSync effective each week rather than on a theoretical appendix.
 
 \subsection*{KPIs that make sense}
 \begin{itemize}
@@ -27,7 +27,7 @@ The feedback loop runs on three rhythms, mirroring the instrumentation drills fr
 \subsection*{How metrics guide change}
 Imagine matching rate drops from 62\% to 48\% over three weeks. Weekly review shows new users from a partner campaign lag and cohort analysis reveals time-to-first-value above 48 hours. We run an onboarding A/B test, add a preference step, tighten algorithm weights, and ship the winner two sprints later. The next monthly check shows matching back above 60\%, repeat usage up eight points, revenue per active match nudging upward, and equity of participation intact, turning KPIs into a compass instead of decoration.
 
-Figure~\ref{fig:feedback-screen} shows the feedback interface powering these metrics: after each project both sides rate collaboration quality, delivery against scope, and communication cadence while qualitative notes surface for moderation and scores feed the matching algorithm. ``Impact badges'' reinforce good behaviour and the refreshed layout keeps the UX light while data stays rich.
+Figure~\ref{fig:feedback-screen} shows the feedback interface powering these metrics: after each project both sides rate collaboration quality, delivery against scope, and communication cadence while qualitative notes surface for moderation and scores feed the matching algorithm. ``Impact badges'' reinforce good behaviour while the layout keeps the UX light.
 
 \begin{figure}[H]
   \centering
@@ -35,5 +35,7 @@ Figure~\ref{fig:feedback-screen} shows the feedback interface powering these met
   \caption{Feedback screen balancing qualitative notes and structured scores.}
   \label{fig:feedback-screen}
 \end{figure}
+
+Figure~\ref{fig:feedback-screen} blends notes and scores to power retention.
 
 We built the analytics stack for reproducibility. Dashboards carry ``definition'' tooltips that link to the dbt logic, SQL lives in version control, and a metrics catalogue keeps newcomers oriented. Quarterly KPI snapshots preserve history even as definitions evolve, turning metrics into institutional memory in the spirit of \citet{Choudary2016}.
