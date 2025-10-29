@@ -1,20 +1,21 @@
 \section*{Assignment 08: Metrics and Learning}
 \addcontentsline{toc}{section}{Assignment 08: Metrics and Learning}
 
-Here I focus on the metrics that actually matter for SkillSync so the platform feels good in practice and performs on paper. The English write-up stays grounded so we can use it day to day rather than as an academic artefact.
+Here I focus on the metrics that matter for SkillSync so the platform feels good in practice and performs on paper. The aim is a practical analytics playbook we can run every week, not a theoretical appendix.
 
 \subsection*{KPIs that make sense}
 \begin{itemize}
-    \item \textbf{Matching rate}: Share of suggested matches that land. If it drops we tweak the algorithm or onboarding questions and slice by cohort to see whether campaigns or new verticals drag the average.
-    \item \textbf{Repeat usage rate}: Share of users who return within 30 days. A dip triggers a review of retention features, notifications, or community events.
-    \item \textbf{Net Promoter Score}: Still useful because it shows whether people would recommend us. A dip often flags fairness or bugs, so we pair it with quick interviews.
-    \item \textbf{Time-to-first-value}: Minutes to the first meaningful interaction. If it drags, we strip friction or add guided missions.
-    \item \textbf{Revenue per active match}: Keeps monetisation tied to behaviour. We also watch variance so a few power users do not prop up the number.
-    \item \textbf{Equity of participation}: Share of projects coming from resource-light partners so we stay honest about the inclusion goals from Assignment~07.
+    \item \textbf{Matching rate}: Share of suggested matches that land; if it drops we tweak the algorithm or onboarding questions and slice by cohort.
+    \item \textbf{Repeat usage rate}: Share of users who return within 30 days; a dip triggers a review of retention features or community rituals.
+    \item \textbf{Net Promoter Score}: Signals whether people would recommend us. Drops usually flag fairness issues or bugs, so we pair them with quick interviews.
+    \item \textbf{Time-to-first-value}: Minutes to the first meaningful interaction. When it drags, we strip friction or add guided missions.
+    \item \textbf{Revenue per active match}: Keeps monetisation tied to behaviour while we monitor variance so a few power users do not prop up the number.
+    \item \textbf{Equity of participation}: Share of projects from resource-light partners so we track inclusion goals from Assignment~07.
+    \item \textbf{Partner retention}: Share of organisations posting again within 60 days. It keeps the organisation side visible in planning debates.
 \end{itemize}
 
 \subsection*{Data infrastructure and feedback loop}
-I keep the data stack simple. Events land in a cloud warehouse (BigQuery or Snowflake), we stream via Segment or RudderStack so the app stays decoupled, dbt shapes clean tables for analysis, and dashboards live in a shared Looker Studio or Metabase space so anyone can explore without SQL.
+I keep the data stack simple. Events land in a cloud warehouse (BigQuery or Snowflake) because both scale affordably and support granular access controls. We stream via Segment or RudderStack so the app stays decoupled, dbt shapes clean tables for analysis, and dashboards live in Looker Studio or Metabase so anyone can explore without SQL while respecting permissions.
 
 The feedback loop runs on three rhythms, mirroring the instrumentation drills from Lecture~5 on metrics and experimentation \citep{Lecture05}:
 \begin{itemize}
@@ -24,14 +25,14 @@ The feedback loop runs on three rhythms, mirroring the instrumentation drills fr
 \end{itemize}
 
 \subsection*{How metrics guide change}
-Imagine matching rate drops from 62\% to 48\% over three weeks. Weekly review shows it is new users from a partner campaign and the cohort analysis reveals time-to-first-value above 48 hours. We run an onboarding A/B test, add a preference step, tighten algorithm weights, and ship the winner two sprints later. The next monthly check shows matching above 60\%, repeat usage up eight points, revenue per active match nudging upward, and equity of participation still intact, turning KPIs into a compass instead of decoration.
+Imagine matching rate drops from 62\% to 48\% over three weeks. Weekly review shows new users from a partner campaign lag and cohort analysis reveals time-to-first-value above 48 hours. We run an onboarding A/B test, add a preference step, tighten algorithm weights, and ship the winner two sprints later. The next monthly check shows matching back above 60\%, repeat usage up eight points, revenue per active match nudging upward, and equity of participation intact, turning KPIs into a compass instead of decoration.
 
-Figure~\ref{fig:feedback-screen} shows the feedback interface powering these metrics. After each project both sides rate collaboration quality, delivery against scope, and communication cadence; qualitative notes surface for moderation while scores flow into the matching algorithm. ``Impact badges'' reinforce good behaviour and the updated `Student-Project-Feedback.png` proves the UX stays light while data stays rich.
+Figure~\ref{fig:feedback-screen} shows the feedback interface powering these metrics: after each project both sides rate collaboration quality, delivery against scope, and communication cadence while qualitative notes surface for moderation and scores feed the matching algorithm. ``Impact badges'' reinforce good behaviour and the refreshed layout keeps the UX light while data stays rich.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\linewidth]{Student-Project-Feedback.png}
-  \caption{Feedback screen (`Student-Project-Feedback.png`).}
+  \caption{Feedback screen balancing qualitative notes and structured scores.}
   \label{fig:feedback-screen}
 \end{figure}
 
