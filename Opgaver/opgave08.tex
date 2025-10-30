@@ -2,7 +2,7 @@
 \addcontentsline{toc}{section}{Assignment 08: Metrics and Learning}
 
 \subsection*{Choosing metrics with intent}
-I selected metrics using the decision tree from Lecture~5 \citep{Lecture05}: start with the core interaction, then layer retention, monetisation, and fairness signals. Each metric below includes the behaviour it captures and the follow up action.
+I selected metrics using the decision tree from Lecture~5 \citep{Lecture05}. It starts with the core interaction, then adds retention, monetisation, and \textit{fairness signals}. Each metric below explains the behaviour it captures and the follow up action.
 \begin{itemize}
     \item \textbf{Matching rate.} Share of suggested matches that convert into accepted projects. If the rate falls, the team inspects the scoping wizard logs and interview transcripts to see whether prompts confuse users.
     \item \textbf{Repeat usage within thirty days.} Tracks whether students and organisations return quickly. A drop triggers outreach interviews and a review of community rituals.
@@ -14,12 +14,12 @@ I selected metrics using the decision tree from Lecture~5 \citep{Lecture05}: sta
 \end{itemize}
 
 \subsection*{Data infrastructure and rituals}
-The data stack mirrors the minimal viable analytics architecture discussed in Lecture~5. Events flow through Segment or RudderStack into a warehouse such as BigQuery. Transformation happens in dbt with version controlled SQL so definitions stay transparent. Dashboards live in Metabase with row level permissions. Every chart includes a tooltip that links to the metric specification document.
+The \textit{data stack} follows the basic analytics setup described in Lecture~5. Events move through Segment or \textit{RudderStack} into a warehouse such as \textit{BigQuery}. Transformation happens in \textit{dbt} with version controlled \textit{SQL}, so definitions remain clear. Dashboards are built in \textbf{Metabase} with row level permissions. Each chart includes a tooltip that links to the metric specification document.
 
-Three cadences keep learning alive. Weekly reviews bring product, data, and support together to inspect dashboard slices and new cohort behaviour. Monthly cohort analyses segment users by acquisition channel and project type to spot retention differences. Quarterly learning reviews summarise experiments, capture lessons learned, and refresh hypotheses. These rituals replicate the "measure, learn, adapt" rhythm \citet{Choudary2016} advocates.
+Three cadences keep learning active. Weekly reviews gather product, data, and support teams to inspect dashboard views and identify new \textit{cohort behaviour}. Monthly \textit{cohort analyses} group users by acquisition channel and project type to find differences in retention. Quarterly learning reviews summarise experiments, record lessons, and update hypotheses. These routines follow the "measure, learn, adapt" rhythm \citet{Choudary2016} describes.
 
 \subsection*{From metrics to action}
-To illustrate the loop, imagine matching rate dropping from sixty two percent to forty eight percent over three weeks. Weekly review notes show that new users from a faculty campaign stall at the preference step and that time to first value exceeds forty five minutes. The team launches an onboarding A B test that adds a guided preference picker, reruns matching weights to favour recent activity, and schedules office hours for the affected cohort. Success criteria include matching rate returning above sixty percent, repeat usage improving by eight points, and equity of participation holding steady. Figure~\ref{fig:feedback-screen} shows the feedback interface that generates the qualitative data needed for these adjustments.
+To show how the loop works, imagine the \textit{matching rate} dropping from sixty two percent to forty eight percent over three weeks. Weekly reviews note that new users from a faculty campaign stop at the preference step and that the \textit{time to first value} goes beyond forty five minutes. The team starts an onboarding A B test that adds a guided preference picker, updates \textit{matching weights} to focus on recent activity, and plans office hours for the affected group. The success criteria are a \textit{matching rate} rising above sixty percent, repeat usage improving by eight points, and \textit{equity of participation} staying steady. Figure~\ref{fig:feedback-screen} shows the feedback interface that produces the qualitative data needed for these changes.
 
 \begin{figure}[H]
   \centering
@@ -28,4 +28,4 @@ To illustrate the loop, imagine matching rate dropping from sixty two percent to
   \label{fig:feedback-screen}
 \end{figure}
 
-Documentation practices close the loop. Metric definitions live in a public wiki, SQL is stored in Git, and quarterly snapshots archive the state of each KPI. That discipline makes the analytics reproducible and keeps future contributors accountable to the same definitions \citep{Choudary2016}.
+Documentation practices complete the process. \textit{Metric definitions} are stored in a public wiki, \textit{SQL} files are kept in Git, and quarterly snapshots save the state of each \textit{KPI}. This approach ensures that the analytics remain reproducible and that future contributors stay responsible for using the same definitions \citep{Choudary2016}.
