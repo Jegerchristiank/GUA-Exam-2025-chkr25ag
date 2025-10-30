@@ -1,39 +1,31 @@
 \section*{Assignment 08: Metrics and Learning}
 \addcontentsline{toc}{section}{Assignment 08: Metrics and Learning}
 
-This section focuses on the metrics that would keep SkillSync effective each week rather than on a theoretical appendix.
-
-\subsection*{KPIs that make sense}
+\subsection*{Choosing metrics with intent}
+I selected metrics using the decision tree from Lecture~5 \citep{Lecture05}: start with the core interaction, then layer retention, monetisation, and fairness signals. Each metric below includes the behaviour it captures and the follow up action.
 \begin{itemize}
-    \item \textbf{Matching rate}: Share of suggested matches that land; if it drops we tweak the algorithm or onboarding questions and slice by cohort.
-    \item \textbf{Repeat usage rate}: Share of users who return within 30 days; a dip triggers a review of retention features or community rituals.
-    \item \textbf{Net Promoter Score}: Signals whether people would recommend us. Drops usually flag fairness issues or bugs, so we pair them with quick interviews.
-    \item \textbf{Time-to-first-value}: Minutes to the first meaningful interaction. When it drags, we strip friction or add guided missions.
-    \item \textbf{Revenue per active match}: Keeps monetisation tied to behaviour while we monitor variance so a few power users do not prop up the number.
-    \item \textbf{Equity of participation}: Share of projects from resource-light partners so we track inclusion goals from Assignment~07.
-    \item \textbf{Partner retention}: Share of organisations posting again within 60 days. It keeps the organisation side visible in planning debates.
+    \item \textbf{Matching rate.} Share of suggested matches that convert into accepted projects. If the rate falls, the team inspects the scoping wizard logs and interview transcripts to see whether prompts confuse users.
+    \item \textbf{Repeat usage within thirty days.} Tracks whether students and organisations return quickly. A drop triggers outreach interviews and a review of community rituals.
+    \item \textbf{Net promoter score.} Captures trust sentiment. Scores below plus twenty launch a qualitative survey and a moderation audit, reflecting \citet{Choudary2016}'s warning that trust is the oxygen of network effects.
+    \item \textbf{Time to first value.} Measures minutes from signup to first meaningful action. If it exceeds thirty minutes we simplify the onboarding checklist or add live support.
+    \item \textbf{Revenue per active match.} Keeps monetisation tied to delivered value. Sudden spikes prompt a fairness review to ensure a few large partners are not masking churn elsewhere.
+    \item \textbf{Equity of participation.} Calculates the share of projects coming from resource light partners, using the fairness clause definitions from Assignment~07. A decline leads to additional subsidies or outreach.
+    \item \textbf{Partner retention within sixty days.} Ensures NGOs stay engaged. If it slides, the partner success team runs structured exit interviews and updates the assurance programme.
 \end{itemize}
 
-\subsection*{Data infrastructure and feedback loop}
-I keep the data stack simple on paper. Events would land in a cloud warehouse (BigQuery or Snowflake) because both scale affordably and support granular access controls. Data would stream via Segment or RudderStack so the app stays decoupled, dbt shapes clean tables for analysis, and dashboards live in Looker Studio or Metabase so anyone can explore without SQL while respecting permissions.
+\subsection*{Data infrastructure and rituals}
+The data stack mirrors the minimal viable analytics architecture discussed in Lecture~5. Events flow through Segment or RudderStack into a warehouse such as BigQuery. Transformation happens in dbt with version controlled SQL so definitions stay transparent. Dashboards live in Metabase with row level permissions. Every chart includes a tooltip that links to the metric specification document.
 
-The feedback loop runs on three rhythms in the plan, mirroring the instrumentation drills from Lecture~5 on metrics and experimentation \citep{Lecture05}:
-\begin{itemize}
-    \item \textbf{Weekly reviews}: Product, data, and support meet every Tuesday, walk the KPI dashboard, and check fresh cohorts so onboarding issues surface fast.
-    \item \textbf{Monthly cohort analyses}: Segment by acquisition channel and first-match timestamp to see which cohorts stick and pay; the report feeds marketing spend and the roadmap.
-    \item \textbf{Quarterly learning readouts}: Summarise experiments, share surprises, and reset hypotheses so the informal student vibe still produces structured knowledge.
-\end{itemize}
+Three cadences keep learning alive. Weekly reviews bring product, data, and support together to inspect dashboard slices and new cohort behaviour. Monthly cohort analyses segment users by acquisition channel and project type to spot retention differences. Quarterly learning reviews summarise experiments, capture lessons learned, and refresh hypotheses. These rituals replicate the "measure, learn, adapt" rhythm \citet{Choudary2016} advocates.
 
-\subsection*{How metrics guide change}
-Imagine matching rate drops from 62\% to 48\% over three weeks. A weekly review would show new users from a partner campaign lagging and cohort analysis would reveal time-to-first-value above 48 hours. I would run an onboarding A/B test, add a preference step, tighten algorithm weights, and ship the winner two sprints later. The next monthly check in this scenario shows matching back above 60\%, repeat usage up eight points, revenue per active match nudging upward, and equity of participation intact, turning KPIs into a compass instead of decoration.
-
-Figure~\ref{fig:feedback-screen} shows the feedback interface powering these metrics: after each project both sides rate collaboration quality, delivery against scope, and communication cadence while qualitative notes surface for moderation and scores feed the matching algorithm. ``Impact badges'' reinforce good behaviour while the layout keeps the UX light.
+\subsection*{From metrics to action}
+To illustrate the loop, imagine matching rate dropping from sixty two percent to forty eight percent over three weeks. Weekly review notes show that new users from a faculty campaign stall at the preference step and that time to first value exceeds forty five minutes. The team launches an onboarding A B test that adds a guided preference picker, reruns matching weights to favour recent activity, and schedules office hours for the affected cohort. Success criteria include matching rate returning above sixty percent, repeat usage improving by eight points, and equity of participation holding steady. Figure~\ref{fig:feedback-screen} shows the feedback interface that generates the qualitative data needed for these adjustments.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\linewidth]{figures/Student-Project-Feedback.png}
-  \caption{Feedback screen mock-up balancing qualitative notes and structured scores.}
+  \caption{Feedback screen mock up balancing qualitative notes and structured scores.}
   \label{fig:feedback-screen}
 \end{figure}
 
-I keep the analytics stack geared toward reproducibility. Dashboards would carry ``definition'' tooltips that link to the dbt logic, SQL lives in version control, and a metrics catalogue keeps newcomers oriented. Quarterly KPI snapshots would preserve history even as definitions evolve, turning metrics into institutional memory in the spirit of \citet{Choudary2016}.
+Documentation practices close the loop. Metric definitions live in a public wiki, SQL is stored in Git, and quarterly snapshots archive the state of each KPI. That discipline makes the analytics reproducible and keeps future contributors accountable to the same definitions \citep{Choudary2016}.

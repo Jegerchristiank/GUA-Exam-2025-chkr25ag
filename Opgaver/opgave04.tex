@@ -1,36 +1,35 @@
 \section*{Assignment 04: Monetisation Strategy}
 \addcontentsline{toc}{section}{Assignment 04: Monetisation Strategy}
 
-This section distils my spreadsheet scenarios into a monetisation plan that respects fragile network effects.
+This section converts spreadsheet experiments into a monetisation roadmap anchored in platform theory instead of wishful thinking.
 
-\subsection*{Revenue streams on the table}
+\subsection*{Revenue options and theoretical grounding}
+I shortlisted four revenue streams and matched each to explicit principles from \citet{Choudary2016} and \citet{HagiuWright2013}.
 \begin{itemize}
-  \item \textbf{Completion fee on each project.} Organisations would pay 7\% of the stipend once both sides mark the project successful, keeping monetisation tied to orchestrated value \citep{HagiuWright2013}.
-  \item \textbf{Enablement subscription.} Larger NGOs and public agencies could upgrade to a 499~DKK/month Partner tier with templated briefs, analytics, and a dedicated coach, mirroring \citet{Choudary2016}'s push for producer tools.
-  \item \textbf{Talent insights add-on.} When sufficient data exists we could sell aggregated skill trends to universities and municipal innovation units with differential privacy and explicit consent so we avoid the surveillance trap \citet{Zuboff2019} warns about.
-  \item \textbf{Grant-backed scholarships.} Social-impact grants could subsidise student stipends for NGOs who cannot afford the fee so inclusion improves while subsidies still accelerate network effects \citep{ShapiroVarian1999}.
+  \item \textbf{Completion fee.} A seven percent fee only triggers once both sides confirm delivery. Hagiu and Wright argue that transaction fees should align with realised value to avoid discouraging participation, so the fee stays invisible until success is logged.
+  \item \textbf{Enablement subscription.} Larger partners can upgrade to a monthly enablement tier that bundles templated briefs, analytics, and advisory sessions. \citet{Choudary2016} lists producer tools as the second monetisation layer once the core interaction works, so this tier waits until the grow phase.
+  \item \textbf{Insight reports.} Aggregated skill and impact trends can be sold to universities and municipal innovation teams. \citet{ShapiroVarian1999} note that information goods scale cheaply, yet \citet{Zuboff2019} warns about surveillance, so reports only launch with differential privacy, opt in consent, and the governance checks described in Assignment~05.
+  \item \textbf{Grant funded scholarships.} Philanthropic grants and university funds can subsidise stipends for resource constrained NGOs. This follows \citet{ShapiroVarian1999}'s price discrimination guidance and keeps inclusion aligned with Assignment~07's fairness commitments.
 \end{itemize}
 
-\subsection*{Timing across the platform lifecycle}
-I anchor the roadmap in the classic seed $\rightarrow$ grow $\rightarrow$ harvest logic \citep{Choudary2016}.
+\subsection*{Sequencing across the lifecycle}
+I map timing to the seed, grow, scale arc from \citet{Choudary2016}.
 \begin{enumerate}
-  \item \textbf{Seeding (0--6 months).} No fees yet; I would sign memoranda of understanding, chase 30 completed projects in theory, and focus on trust rituals such as office hours and templated retrospectives.
-  \item \textbf{Early growth (months 7--12).} Introduce the 7\% completion fee for new organisations while grandfathering the original cohort for three months, pilot the Partner tier with five agencies, and track completion above 85\%, churn below 10\%, and a net promoter score above +30 as target guardrails.
-  \item \textbf{Mature growth (beyond month 12).} Scale the fee to everyone, roll out the Partner tier broadly, launch the insights add-on, and track revenue per active organisation alongside NPS and tool adoption so monetisation deepens engagement.
+  \item \textbf{Seed months zero to six.} No fees. The focus is on trust rituals: weekly office hours, concierge onboarding, and a public roadmap. Success means thirty completed projects and satisfaction above four point five.
+  \item \textbf{Early grow months seven to twelve.} Introduce the seven percent completion fee for new organisations while grandfathering the founding cohort for three months. Pilot the enablement tier with five agencies and track completion above eighty five percent, churn below ten percent, and net promoter score above plus thirty. These thresholds come from lecture case studies on balancing monetisation with quality \citep{Lecture05}.
+  \item \textbf{Scale beyond month twelve.} Extend fees to all partners, roll out enablement broadly, and launch the insight reports once the data board signs off on privacy safeguards. Monitor revenue per active organisation alongside engagement to catch extraction risks \citep{Srnicek2017}.
 \end{enumerate}
 
-\subsection*{Experiments and guardrails}
-To maintain analytical discipline, I propose three experiments: an A/B test on when organisations see the completion fee, Van Westendorp pricing interviews to validate the Partner tier before hard-coding 499~DKK, and a 15-person diary study on whether insights reporting feels empowering or intrusive \citep{Reillier2017}. The A/B test would compare disclosure at brief creation versus post-match; the pricing study clears the bar if the acceptable range averages 449--549~DKK; and the diary study would keep a rollback plan ready if trust drops below 70\% in qualitative scoring.
+\subsection*{Experiments and cost discipline}
+Each revenue stream carries a paired experiment. The completion fee gets an A B test comparing disclosure at brief creation versus after matching. The enablement tier runs through Van Westendorp pricing interviews with at least twenty organisations; launch only happens if the acceptable range centres between four hundred and five hundred DKK. Insight reports start with a diary study involving fifteen participants who rate trust on a five point scale; anything below three forces a redesign. Costs stay visible: fixed year one spend sits near six hundred twenty thousand DKK for product, design, and operations, while variable costs scale with completed sprints. Break even requires roughly one thousand fifty projects per year, a number pulled from Assignment~09's capacity model.
 
-Cost mapping keeps the plan grounded: fixed year-one spend sits around 620,000~DKK for builders, design, and hosting, variable costs follow finished projects, and break-even lands near 1,050 projects per year, matching Assignment~09 and \citet{ShapiroVarian1999}.
-
-Figure~\ref{fig:student-profile} puts a face on monetisation: the upgraded student profile surfaces badges, skill heatmaps, and endorsement timelines so NGOs can review talent quickly, while the ``next skill to showcase'' nudge keeps the data network effect tangible even in mock form.
+Figure~\ref{fig:student-profile} shows the student profile interface that makes these revenue streams plausible. It surfaces badges, skill evidence, and mentor quotes that organisations value, while prompts encourage students to keep data fresh. The mock up enacts \citet{Choudary2016}'s advice to monetise after creating tangible producer surplus.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\linewidth]{figures/Student-Profile.png}
-  \caption{Student profile mock-up highlighting badges, heatmaps, and nudges.}
+  \caption{Student profile mock up highlighting evidence that underpins monetisation.}
   \label{fig:student-profile}
 \end{figure}
 
-Finally, I pressure-test ethical boundaries: the insights add-on ships only after five organisations in a sector and 500 projects, consent flows spell out ``why we collect this'' with easy opt-outs, and grants stay separate from transaction fees so subsidies never distort price signals \citep{Zuboff2019,Srnicek2017}.
+Ethical guardrails conclude the plan. Insight reports wait until at least five organisations in a sector and five hundred completed projects are available. Consent screens explain why each datapoint is collected, and grants stay separate from transaction fees so subsidies do not distort signals. These safeguards translate \citet{Zuboff2019}'s critique into product requirements.
