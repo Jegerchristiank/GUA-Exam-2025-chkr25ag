@@ -34,6 +34,18 @@
   {\small This cover sheet confirms that the assignment is submitted individually and complies with CBS formal requirements.}
 \end{titlepage}
 
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
 % Remove numbering in headings and thus in-text
 \setcounter{secnumdepth}{-1}
 % Remove numbers in TOC entries
@@ -45,6 +57,9 @@
 \addcontentsline{toc}{section}{Executive Summary}
 This report analyses the design, governance, and growth logic of the envisioned SkillSync platform for the CBS course ``Google, Uber, Amazon: Management of Platform Business.'' I combine course frameworks from Choudary, Srnicek, Parker, and the recorded lectures with a concept-stage marketplace connecting students and NGOs. Experiments, metrics, and stakeholder conversations appear as structured thought exercises rather than lived launches, yielding provisional lessons about onboarding, data practices, governance, and a hypothetical scaling roadmap.
 
+\newpage
+
+\vspace*{\baselineskip}
 \tableofcontents
 \newpage
 
