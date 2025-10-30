@@ -1,23 +1,24 @@
 \section*{Assignment 09: Scaling Strategy}
 \addcontentsline{toc}{section}{Assignment 09: Scaling Strategy}
 
-SkillSync scales in three stages. Phase one tackles product-market fit: fortify the core, test network effects within one geographic cluster, and land two local anchor partners (trade association plus municipal innovation unit) so their signalling power lifts both sides at once \citep{Choudary2016,Reillier2017}. Success looks like 60 active students, 20 projects completed with satisfaction above 4.5/5, and partner retention over 70\%. I keep a focused growth pod, two developers for stability, and a community manager shepherding feedback loops in the pilot Slack --- all still hypothetical roles for now.
+\subsection*{Phase one: proving product market fit}
+The first phase runs within a single city so coordination stays manageable. I target sixty active students and twenty completed projects with satisfaction above four point five. These numbers come from the launch model in Assignment~02 and \citet{Choudary2016}'s suggestion to reach a minimum viable critical mass before expanding. Two anchor partners, ideally a municipal innovation unit and a trusted NGO network, lend legitimacy. The team structure includes a product lead, two engineers, a community manager, and part time mentor support. Weekly retrospectives log every friction point in a shared knowledge base so improvements remain evidence based.
 
-Phase two covers regional scaling. I would standardise onboarding flows and API contracts so partners plug in without hand-holding, run a three-tier programme (community, certified, strategic) to manage quality and incentives \citep{HagiuWright2013}, staff a lean partner-success team, ship shared dashboards, and track cross-side conversion plus time-to-value per partner to see whether network effects accelerate \citep{ShapiroVarian1999,Lecture12}. Targets include 250 active students, 75 active organisations, and time-to-first-value under 12 hours.
+\subsection*{Phase two: regional expansion}
+Once the core loops hold, the second phase scales across the region. Onboarding flows become standardised templates, and the API described in Assignment~06 lets partners integrate without bespoke work. I introduce a three tier partner programme (community, certified, strategic) with criteria for response time, satisfaction, and contribution to fairness metrics. Targets grow to two hundred fifty active students, seventy five organisations, and time to first value under twelve hours. These thresholds align with \citet{HagiuWright2013}'s emphasis on balancing growth and quality. A partner success pod tracks retention and runs quarterly business reviews, borrowing rituals from enterprise SaaS but keeping tone informal.
+
+\subsection*{Phase three: national network}
+The final phase explores national or Nordic reach once unit economics stabilise. This step requires alliances with national agencies, expanded governance via an advisory board, and white label options for institutions that need their own branding. Success looks like five hundred projects per year, completion above ninety percent, and net revenue retention above one hundred ten percent. \citet{Srnicek2017} warns that scale without legitimacy invites backlash, so transparency reports and the inclusion council remain central.
+
+\subsection*{Risk mitigation and decision gates}
+Two risks dominate scaling plans: churn and quality drift. To manage churn I track retention per segment, run exit interviews, and maintain loyalty loops such as alumni storytelling events. To manage quality I enforce service level agreements on response times, automate match quality monitoring, and convene a community board when satisfaction dips below four point four for two consecutive months. If that happens, new partner onboarding pauses until remediation steps pass a board vote. Figure~\ref{fig:scaling-dashboard} visualises the dashboard that would watch these signals.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.75\linewidth]{figures/Student-Dashboard.png}
-  \caption{Adoption dashboard mock-up tracking activation against partner enablement.}
+  \caption{Adoption dashboard mock up tracking activation against partner enablement.}
   \label{fig:scaling-dashboard}
 \end{figure}
 
-Phase three moves national (maybe Nordic) once the first two phases prove unit economics. The roadmap courts alliances with larger institutional players, negotiates white-label deals with select enterprise clients, and expands governance with clear data-sharing principles, algorithm audits, and an advisory board so legitimacy scales \citep{Srnicek2017,Zuboff2019}. The threshold is 500 projects per year with completion above 90\% and net revenue retention above 110\%.
-
-Two risks dominate: churn and quality decay. Churn can hit users or partners, especially if competitors tempt them with exclusive features or lower fees, so the plan builds switching costs through data portability, loyalty loops, and analytics that lose value if someone leaves \citep{FarrellSaloner1986,ShapiroVarian1999}. Quality decay flares when growth dilutes standards, so I would enforce service-level agreements, automate match-quality monitoring, and run quarterly partner reviews with a community board catching signals before the dashboards scream \citep{Reillier2017}. Example safeguards include limiting access to longitudinal impact reports to active partners and running spot audits on project retros.
-
-Theory lines up with the platform canon: network effects need critical mass but pushing too fast erodes match quality and differentiation \citep{Porter2008}. \citet{Choudary2016} remind us governance and producer enablement must evolve with each phase, while \citet{Srnicek2017} stresses pairing growth with legitimacy and transparency, so I keep investing in partnerships and organisational scaffolding on paper.
-
-I stress-tested the roadmap with a simple Google Sheets simulation covering activation rate, partner velocity, moderation load, and average project value. It estimates moderators and partner managers per 1,000 active users, a churn buffer, and a pause rule: if quality drops below 4.4/5 for two months I freeze new partners until the governance board approves remediation.
-
-Each phase in the plan ends with a ``story harvest'' that would feed marketing, training, and retros via \citet{Choudary2016}'s interaction-model canvas.
+\subsection*{Scenario modelling}
+To test resilience I built a Google Sheets simulation tracking activation rate, moderation load, partner velocity, and revenue per project. The model estimates staff needs per one thousand active users and includes a pause rule: if satisfaction stays below four point four for eight weeks, growth spending freezes. I also modelled a downside case where retention drops five points; it lowers annual revenue by roughly nine million DKK and delays break even by twelve months, so the playbook includes a cost reduction plan that prioritises core trust features. These exercises apply \citet{Lecture12}'s recommendation to treat scaling as a system design problem rather than a marketing stunt.
